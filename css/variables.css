@@ -26,6 +26,11 @@
     --color-accent-hover: #14b8a6;
     --color-temp-unit: #f97316;
     --color-nav-active: #fbbf24;
+
+
+    --color-temp-cold: #3b82f6;
+    --color-temp-mild: #f97316;
+    --color-temp-warm: #ef4444;
   }
   
   /* =========================

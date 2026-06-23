@@ -24,3 +24,5 @@ const FORECAST_PARAMS = {
   timezone: 'auto',
   forecast_days: 5,
 };
+
+const DEFAULT_CITY = 'Noida';
