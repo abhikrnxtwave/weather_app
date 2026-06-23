@@ -1,5 +1,6 @@
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
+const clearCityBtn = document.getElementById('clear-city');
 
 async function loadWeatherForCity(city) {
   const trimmed = city.trim();
@@ -14,9 +15,13 @@ async function loadWeatherForCity(city) {
 
   try {
     const result = await getWeatherForCity(trimmed);
+
     renderCurrentWeather(result.location, result.weather);
     renderForecastStrip(result.weather);
     renderHourlyInsights(result.weather);
+
+    saveLastCity(trimmed);
+    searchInput.value = trimmed;
   } catch (error) {
     console.error(error);
     showError(error.message || 'Something went wrong. Please try again.');
@@ -30,8 +35,17 @@ searchForm.addEventListener('submit', async (event) => {
   await loadWeatherForCity(searchInput.value);
 });
 
-// Load default city on page open
+if (clearCityBtn) {
+  clearCityBtn.addEventListener('click', resetToEmptyState);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  searchInput.value = DEFAULT_CITY;
-  loadWeatherForCity(DEFAULT_CITY);
+  const savedCity = getLastCity();
+
+  if (savedCity) {
+    searchInput.value = savedCity;
+    loadWeatherForCity(savedCity);
+  } else {
+    resetToEmptyState();
+  }
 });

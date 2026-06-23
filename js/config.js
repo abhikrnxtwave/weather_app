@@ -25,4 +25,4 @@ const FORECAST_PARAMS = {
   forecast_days: 5,
 };
 
-const DEFAULT_CITY = 'Noida';
+const STORAGE_KEY_LAST_CITY = 'weather_app_last_city';

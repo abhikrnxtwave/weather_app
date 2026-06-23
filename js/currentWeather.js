@@ -39,4 +39,10 @@ function renderCurrentWeather(location, weather) {
   
     // Show card
     card.hidden = false;
+
+
+    showWeatherSections();
+
+    const clearBtn = document.getElementById('clear-city');
+    if (clearBtn) clearBtn.hidden = false;
   }
