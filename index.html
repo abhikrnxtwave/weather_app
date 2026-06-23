@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">Weather App</a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#" class="nav-link nav-link--active">Dashboard</a>
+        <a href="#" class="nav-link">Map</a>
+        <a href="#" class="nav-link">Education</a>
+        <a href="#" class="nav-link">Historical</a>
+      </nav>
+
+      <button
+        type="button"
+        id="theme-toggle"
+        class="theme-toggle"
+        aria-label="Switch to dark mode"
+      ></button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Search -->
+    <section id="search-section" class="search-section">
+      <form class="search-form">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search for a city or meteorological station..."
+          aria-label="Search city"
+        />
+        <button type="submit" class="search-button">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          SEARCH
+        </button>
+      </form>
+    </section>
+
+    <!-- Current Weather -->
+    <section>
+      <article id="current-weather" class="card current-weather">
+
+        <div class="current-weather__main">
+          <h1 class="weather-location">Copenhagen, Denmark</h1>
+
+          <p class="current-weather__date icon-row icon-row--teal">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Monday, Oct 24
+          </p>
+
+          <p class="weather-temp">
+            12<span class="weather-unit">°c</span>
+          </p>
+
+          <p class="weather-description icon-row">
+            <svg class="icon icon--condition" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <!-- Sun rays (top-left) -->
+              <path d="M12 2v2"/>
+              <path d="m4.93 4.93 1.41 1.41"/>
+              <path d="M20 12h2"/>
+              <path d="m19.07 4.93-1.41 1.41"/>
+              <!-- Sun arc peeking behind cloud -->
+              <path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"/>
+              <!-- Cloud -->
+              <path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/>
+            </svg>
+            Partly Cloudy
+          </p>
+        </div>
+
+        <div class="weather-stats">
+
+          <div class="stat-box">
+            <svg class="icon icon--stat" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22a7 7 0 0 0 7-7c0-4-7-13-7-13S5 11 5 15a7 7 0 0 0 7 7z"/>
+            </svg>
+            <div>
+              <p class="stat-label">Humidity</p>
+              <p class="stat-value">64%</p>
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <svg class="icon icon--stat" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9.59 4.59A2 2 0 1 1 11 8H2"/>
+              <path d="M12.59 19.41A2 2 0 1 0 14 16H2"/>
+              <path d="M17.73 7.73A2.5 2.5 0 1 1 19.5 12H2"/>
+            </svg>
+            <div>
+              <p class="stat-label">Wind Speed</p>
+              <p class="stat-value">18 km/h</p>
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <svg class="icon icon--stat" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m16 16 3-8 3 8"/>
+              <path d="M12 16V4"/>
+              <path d="M8 16v-4"/>
+              <path d="M4 16v-2"/>
+            </svg>
+            <div>
+              <p class="stat-label">Pressure</p>
+              <p class="stat-value">1012 hPa</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+    </section>
+
+    <!-- 5 Day Forecast -->
+    <section id="forecast-strip" class="forecast-strip">
+
+      <article class="card forecast-card forecast-card--active">
+        <p class="forecast-day">TODAY</p>
+        <div class="forecast-icon" aria-hidden="true">
+          <svg class="icon icon--forecast" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        </div>
+        <p class="forecast-temp">12° / 8°</p>
+      </article>
+
+      <article class="card forecast-card">
+        <p class="forecast-day">TUE</p>
+        <div class="forecast-icon" aria-hidden="true">
+          <svg class="icon icon--forecast" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+            <path d="M16 14v6"/><path d="M8 14v6"/>
+            <path d="M12 16v6"/>
+          </svg>
+        </div>
+        <p class="forecast-temp">10° / 6°</p>
+      </article>
+
+      <article class="card forecast-card">
+        <p class="forecast-day">WED</p>
+        <div class="forecast-icon" aria-hidden="true">
+          <svg class="icon icon--forecast" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+          </svg>
+        </div>
+        <p class="forecast-temp">11° / 7°</p>
+      </article>
+
+      <article class="card forecast-card">
+        <p class="forecast-day">THU</p>
+        <div class="forecast-icon" aria-hidden="true">
+          <svg class="icon icon--forecast" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        </div>
+        <p class="forecast-temp">14° / 9°</p>
+      </article>
+
+      <article class="card forecast-card">
+        <p class="forecast-day">FRI</p>
+        <div class="forecast-icon" aria-hidden="true">
+          <svg class="icon icon--forecast" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+            <path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/>
+          </svg>
+        </div>
+        <p class="forecast-temp">9° / 5°</p>
+      </article>
+
+    </section>
+
+    <!-- Hourly Insights -->
+    <section id="hourly-insights" class="card">
+
+      <div class="section-header">
+        <h2 class="section-title">Hourly Micro-Data Insights</h2>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+      </div>
+
+      <div class="hourly-list">
+
+        <div class="hourly-item">
+          <span class="hourly-time">14:00</span>
+          <div class="hourly-label-wrap">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2"/><path d="M12 20v2"/>
+              <path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/>
+              <path d="M2 12h2"/><path d="M20 12h2"/>
+            </svg>
+            <span class="hourly-label">High UV Index</span>
+          </div>
+          <span class="hourly-temp">12.4°C</span>
+        </div>
+
+        <div class="hourly-item">
+          <span class="hourly-time">15:00</span>
+          <div class="hourly-label-wrap">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+            </svg>
+            <span class="hourly-label">Developing Cumulus</span>
+          </div>
+          <span class="hourly-temp">11.8°C</span>
+        </div>
+
+        <div class="hourly-item">
+          <span class="hourly-time">16:00</span>
+          <div class="hourly-label-wrap">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9.59 4.59A2 2 0 1 1 11 8H2"/>
+              <path d="M12.59 19.41A2 2 0 1 0 14 16H2"/>
+              <path d="M17.73 7.73A2.5 2.5 0 1 1 19.5 12H2"/>
+            </svg>
+            <span class="hourly-label">Gust Peak Recorded</span>
+          </div>
+          <span class="hourly-temp">11.2°C</span>
+        </div>
+
+        <div class="hourly-item">
+          <span class="hourly-time">17:00</span>
+          <div class="hourly-label-wrap">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+            </svg>
+            <span class="hourly-label">Stratus Coverage</span>
+          </div>
+          <span class="hourly-temp">10.5°C</span>
+        </div>
+
+        <div class="hourly-item">
+          <span class="hourly-time">18:00</span>
+          <div class="hourly-label-wrap">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+              <path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/>
+            </svg>
+            <span class="hourly-label">Precipitation Expected</span>
+          </div>
+          <span class="hourly-temp">9.8°C</span>
+        </div>
+
+        <div class="hourly-item">
+          <span class="hourly-time">19:00</span>
+          <div class="hourly-label-wrap">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+            </svg>
+            <span class="hourly-label">Clear Dusk Horizon</span>
+          </div>
+          <span class="hourly-temp">8.9°C</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="empty-state" hidden>
+      <article class="card">
+        <h2>No Weather Data</h2>
+        <p>Search for a city to view weather information.</p>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Weather App</p>
+        <p class="footer-copy">© 2024 Weather App. Precision Weather Education.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Scientific Data Sources</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+</body>
+</html>
