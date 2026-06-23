@@ -15,6 +15,8 @@ async function loadWeatherForCity(city) {
   try {
     const result = await getWeatherForCity(trimmed);
     renderCurrentWeather(result.location, result.weather);
+    renderForecastStrip(result.weather);
+    renderHourlyInsights(result.weather);
   } catch (error) {
     console.error(error);
     showError(error.message || 'Something went wrong. Please try again.');

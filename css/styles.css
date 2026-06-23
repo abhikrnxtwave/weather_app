@@ -134,6 +134,23 @@
   .weather-unit {
     color: var(--color-temp-unit);
   }
+
+ /* Temperature accent by range */
+    .weather-temp--cold .weather-unit {
+        color: #3b82f6;   /* blue — cold */
+      }
+    
+      .weather-temp--mild .weather-unit {
+        color: #f97316;   /* orange — mild (matches mockup) */
+      }
+    
+      .weather-temp--warm .weather-unit {
+        color: #ef4444;   /* red — hot */
+      }
+    
+      .weather-temp {
+        transition: color 0.3s ease;
+      }
   
   .weather-description {
     color: var(--color-text-muted);
@@ -193,6 +210,20 @@
     color: var(--color-text-muted);
   }
   
+
+  .forecast-temp-high {
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .forecast-temp-low {
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  .forecast-temp-sep {
+    color: var(--color-text-muted);
+  }
   /* =========================
      Hourly Insights
      ========================= */

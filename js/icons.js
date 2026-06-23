@@ -37,3 +37,9 @@ const WEATHER_ICONS = {
   function getWeatherIcon(key) {
     return WEATHER_ICONS[key] || WEATHER_ICONS.cloud;
   }
+
+  function getForecastIcon(key) {
+    return getWeatherIcon(key)
+      .replace('width="24" height="24"', 'width="28" height="28"')
+      .replace('icon--condition', 'icon--forecast');
+  }
