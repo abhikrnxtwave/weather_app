@@ -31,6 +31,14 @@
     --color-temp-cold: #3b82f6;
     --color-temp-mild: #f97316;
     --color-temp-warm: #ef4444;
+
+
+      /* Transitions */
+      --transition-fast: 0.2s ease;
+      --transition-theme: 0.3s ease;
+  
+      /* Focus ring */
+      --color-focus-ring: #2dd4bf;
   }
   
   /* =========================
@@ -89,6 +97,15 @@
     color: var(--color-text);
   
     transition:
-      background-color 0.2s ease,
-      color 0.2s ease;
+      background-color var(--transition-theme),
+      color var(--transition-theme);
+  }
+  *,
+  *::before,
+  *::after {
+    transition:
+      background-color var(--transition-theme),
+      color var(--transition-theme),
+      border-color var(--transition-theme),
+      box-shadow var(--transition-theme);
   }
